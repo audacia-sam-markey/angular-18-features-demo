@@ -1,0 +1,65 @@
+<p>defer-demo works!</p>
+
+<!-- |will trigger when the browser is idle -->
+
+<!-- What is happening?
+1. The main application bundle is loading first
+2. Then the @defer bundle is loaded
+3. You can verify this by going on the network tab and it will be loaded last
+
+-->
+@defer {
+
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+}
+
+
+@placeholder (minimum 5s) {
+
+  placeholder...
+}
+
+
+@loading(after 1s; minimum 2s) {
+
+  <!-- Notice that any dependencies inside the @loading block are all eagerly loaded as well, just like in the case of @placeholder. -->
+
+  loading...
+} @error {
+  Something went wrong with the loading of the bundle! 😟
+}
+
+<div class="separator">
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  <app-signal-queries-child></app-signal-queries-child>
+  @defer(on viewport) {
+
+   <app-child-component-demo [inputExample]="'viewport'" [oldInputExample]="'viewport'"></app-child-component-demo>
+
+  } @placeholder {
+ <div>Loading viewport</div>
+  }
+</div>
+
+
+
+
+

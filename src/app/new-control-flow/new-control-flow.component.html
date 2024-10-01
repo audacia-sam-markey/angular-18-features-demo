@@ -1,0 +1,86 @@
+
+ <h2>&#64;if, &#64;else if, &#64;else </h2>
+ <!-- @if -->
+<!-- The @if conditional supports saving the result of the conditional expression into a variable for reuse inside of the block. -->
+@if (areThereClouds()  && isRaining(); ) {
+  Its Raining 🌧️
+
+
+}
+
+ <!-- @else if -->
+@else if(areThereClouds()) {
+
+  Its cloudy ☁️
+}
+ <!-- @else -->
+@else {
+ The sky is clear 😎
+}
+
+
+
+<!-- @for -->
+<div class="separator">
+<h2>&#64;for and &#64;empty </h2>
+  @for(item of items(); track $index){
+    {{item.id}}
+  } @empty {
+    There are not items 🔥
+  }
+
+  <table >
+
+    <tr>
+      <td><h2>Variable</h2></td>
+      <td><h2>Meaning</h2></td>
+    </tr>
+
+
+    <tr>
+      <td>$count</td>
+      <td>Number of items in a collection iterated over</td>
+    </tr>
+    <tr>
+      <td>$index</td>
+      <td>Index of the current row</td>
+    </tr>
+    <tr>
+    <td>$first</td>
+    <td>Whether the current row is the first row</td>
+  </tr>
+  <tr>
+    <td>$last</td>
+    <td>Whether the current row is the last row</td>
+  </tr>
+  <tr>
+    <td>$even</td>
+    <td>Whether the current row index is even</td>
+  </tr>
+  <tr>
+    <td>$odd</td>
+    <td>Whether the current row index is odd</td>
+  </tr>
+
+</table>
+</div>
+
+<div class="separator">
+   <h2>&#64;switch case </h2>
+@switch(amountOfTimesItsRained()){
+  @case(0){
+    <span>It has not rained yet</span>
+    }
+    @case(1){
+    <span>It has rained once</span>
+    }
+    @case(2){
+    <span>It has rained twice</span>
+    }
+    @default{
+    <span>It has rained more than twice</span>
+
+  }
+}
+
+</div>
