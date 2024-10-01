@@ -89,3 +89,10 @@ After the loading is completed, it disappears.
  - the optional @defer trigger, which controls when the @defer block gets displayed to the user
 
 The keyword `on` is used for predefined triggers, while the keyword `when` is used for custom triggers.
+
+
+References/Creditation:
+
+https://blog.angular-university.io/angular-defer/ 
+
+https://angular.dev/overview
